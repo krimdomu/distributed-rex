@@ -1,0 +1,6 @@
+=pod
+
+=head1 Distributed Rex
+
+Distibuted Rex is a addition to Rex for distributed Task execution with the help of gearman. So it is possible to scale rex.
+
