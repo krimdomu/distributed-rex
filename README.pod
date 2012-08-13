@@ -8,7 +8,7 @@ Distributed Rex is setup of two components. One (or more) Worker and one Client.
 
 =head1 INSTALLATION
 
-If you want to test Distributed Rex you have to follow these steps. But keep in mind, this is work in progress. It may crash your systems and eat all your jelly beans and pretzel sticks. You have been warned!
+If you want to test Distributed Rex you have to follow these steps. But keep in mind, this is work in progress. It may crash your systems and eat all your jelly beans and pretzel sticks. And even worse - drink all your beer. You have been warned!
 
 
 =head2 On the Client
