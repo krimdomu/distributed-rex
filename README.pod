@@ -4,7 +4,7 @@
 
 Distibuted Rex is a addition to Rex for distributed Task execution with the help of gearman. So it is possible to scale rex.
 
-Distributed Rex is setup of two components. One Worker and one Client. As more worker you run as more parallel tasks you are able to execute.
+Distributed Rex is setup of two components. One (or more) Worker and one Client. As more worker you run as more parallel tasks you are able to execute.
 
 =head1 INSTALLATION
 
