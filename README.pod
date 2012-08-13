@@ -39,7 +39,7 @@ Now you can install Distributed Rex.
 
 First you have to install gearman and start it. 
 
-After that you have to distribute your Rexfile (and all associated files (like templates, the "lib" directory, ssh keys, ...) to your worker machines. Please be carefull to name the directory where the Rexfile lives in exact the same as on your client machine!
+After that you have to distribute your Rexfile (and all associated files (like templates, the "lib" directory, ssh keys, ...) to your worker machines. Please be carefull to name the directory where the Rexfile lives in exact the same way as on your client machine!
 
 Now you have to install the Gearman Perl modules.
 
