@@ -75,6 +75,7 @@ sub run {
          default_auth => $self->is_default_auth,
       };
 
+      Rex::Logger::info("Adding new task to execute $task_name on $server->to_s");
       $taskset->add_task(
          $func_name => encode_json($options), {
             on_complete => sub {
