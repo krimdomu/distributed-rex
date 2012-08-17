@@ -4,6 +4,7 @@ my %deps = (
                   'Gearman::Worker' => '0',
                   'Gearman::Client' => '0',
                   'JSON::XS' => 0,
+                  'Rex' => '0.32',
 );
 
 WriteMakefile1(
@@ -16,7 +17,7 @@ WriteMakefile1(
    #},
 
    NAME => 'Rex::TaskList::Gearman',
-   VERSION_FROM => 'lib/Rex/TaskList/Gearman.pm',
+   VERSION_FROM => 'lib/Rex/Gearman.pm',
    PREREQ_PM => \%deps,
    EXE_FILES => ['bin/rex-gearman-client', 'bin/rex-gearman-worker'],
    LICENSE => 'Apache License 2.0'
