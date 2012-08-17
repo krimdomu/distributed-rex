@@ -55,15 +55,6 @@ sub run {
 
    for my $server (@all_server) {
 
-      # pseudo code
-      # my $options = {
-      #     task => $task_name,
-      #     server => $server,
-      #     argv => \@ARGV,
-      #     options => \%option,
-      # };
-      # Gearman::Client->push_job('run_task', encode_json($options));
-
       my $options = {
          task => $task_name,
          server => $server->to_s,
@@ -90,8 +81,6 @@ sub run {
 
    Rex::Logger::debug("Waiting for children to finish");
 
-   # pseudo code
-   # Gearman::Client->wait_for_all;
    $taskset->wait;
 
 }
