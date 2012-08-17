@@ -9,8 +9,6 @@ package Rex::TaskList::Gearman;
 use strict;
 use warnings;
 
-our $VERSION = "0.0.1";
-
 use Cwd qw(getcwd);
 use File::Basename;
 use Gearman::Client;
