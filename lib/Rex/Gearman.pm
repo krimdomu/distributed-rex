@@ -11,6 +11,8 @@ use warnings;
 
 our $VERSION = "0.0.2";
 
+1;
+
 =head1 Rex::Gearman - Distributed Rex
 
 Distibuted Rex is a addition to Rex for distributed Task execution with the help of gearman. So it is possible to scale rex.
@@ -133,4 +135,3 @@ If you need help, you can join us on irc on irc.freenode.net channel #rex.
 
 
 
-1;
