@@ -16,7 +16,7 @@ WriteMakefile1(
    #BUILD_REQUIRES => {
    #},
 
-   NAME => 'Rex::TaskList::Gearman',
+   NAME => 'Rex::Gearman',
    VERSION_FROM => 'lib/Rex/Gearman.pm',
    PREREQ_PM => \%deps,
    EXE_FILES => ['bin/rex-gearman-client', 'bin/rex-gearman-worker'],
