@@ -5,8 +5,7 @@ Maintainer: Jan Gehring <jan.gehring@gmail.com>
 Build-Depends: debhelper (>= 7),
                   rex (>=0.32.0)
                   perl (>= 5.10.0),
-                  libjson-xs-perl,
-                  libgearman-client-perl
+                  libjson-xs-perl
 Standards-Version: 3.9.1
 Homepage: http://rexify.org/
 
@@ -17,5 +16,6 @@ Depends: ${misc:Depends},
             rex (>= 0.32.0),
             libjson-xs-perl,
             libyaml-perl,
-            libgearman-client-perl
+            libgearman-client-perl.
+            gearman
 Description: Distributed Rex with Gearman

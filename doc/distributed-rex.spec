@@ -14,12 +14,12 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires: perl-Net-SSH2
 BuildRequires: rex >= 0.32.0
-BuildRequires: perl-Gearman-Client
 BuildRequires: perl(ExtUtils::MakeMaker)
 Requires: rex >= 0.32.0
 Requires: perl >= 5.8.0
 Requires: perl-JSON-XS
 Requires: perl-Gearman-Client
+Requires: gearmand
 
 %description
 Rex is a tool to ease the execution of commands on multiple remote 
