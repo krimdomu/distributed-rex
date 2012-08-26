@@ -11,28 +11,9 @@ Distributed Rex is setup of two components. One (or more) Worker and one Client.
 If you want to test Distributed Rex you have to follow these steps. But keep in mind, this is work in progress. It may crash your systems and eat all your jelly beans and pretzel sticks. And even worse - drink all your beer. You have been warned!
 
 
-=head2 On the Client
+=head2 On the Client and the Worker Nodes
 
-First you have to download the development branch of Rex 0.32.
-
- git clone git://github.com/krimdomu/Rex.git rex
- cd rex
- perl Makefile.PL
- make
- make test (perhaps you need to skip this)
- make install
-
-After that you have to install the Gearman Perl modules.
-
- curl -L cpanmin.us | perl - --sudo -n Gearman::Client
-
-Now you can install Distributed Rex.
-
- git clone git://github.com/krimdomu/distributed-rex.git
- cd distributed-rex
- perl Makefile.PL
- make
- make install
+ curl -L get.rexify.org | perl - --sudo -n Rex::Gearman
 
 
 =head2 On the server (worker)
@@ -41,17 +22,31 @@ First you have to install gearman and start it.
 
 After that you have to distribute your Rexfile (and all associated files (like templates, the "lib" directory, ssh keys, ...) to your worker machines. Please be carefull to name the directory where the Rexfile lives in exact the same way as on your client machine!
 
-Now you have to install the Gearman Perl modules.
+On your Client:
 
- curl -L cpanmin.us | perl - --sudo -n Gearman::Worker
+ /home/user/projects/frontend
+                        |-- Rexfile
+                        |-- client.conf
+                        +-- lib
+                        |   +-- Rex
+                        |       +-- Webserver
+                        |       +-- Apache.pm
+                        |           +-- templates
+                        |               +-- httpd.conf
+                        +-- worker.conf
 
-And Distributed Rex.
+On your Wroker:
 
- git clone git://github.com/krimdomu/distributed-rex.git
- cd distributed-rex
- perl Makefile.PL
- make
- make install
+ /opt/rex/frontend
+             |-- Rexfile
+             |-- client.conf
+             +-- lib
+             |   +-- Rex
+             |       +-- Webserver
+             |       +-- Apache.pm
+             |           +-- templates
+             |               +-- httpd.conf
+             +-- worker.conf
 
 Now change into the directory where your I<Rexfile> is located and create a file I<worker.conf>.
 
