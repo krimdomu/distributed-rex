@@ -5,20 +5,20 @@
 
 Summary: Distributed Rex with Gearman
 Name: rex-gearman
-Version: 0.31.99.0
+Version: 0.32.0
 Release: 1
 License: Apache 2.0
 Group: Utilities/System
-Source: http://search.cpan.org/CPAN/authors/id/J/JF/JFRIED/Rex-Gearman-0.31.99.0.tar.gz
+Source: http://search.cpan.org/CPAN/authors/id/J/JF/JFRIED/Rex-Gearman-0.32.0.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires: perl-Net-SSH2
-BuildRequires: rex >= 0.32.0
+BuildRequires: rex
 BuildRequires: perl(ExtUtils::MakeMaker)
 Requires: rex >= 0.32.0
 Requires: perl >= 5.8.0
 Requires: perl-JSON-XS
-Requires: perl-Gearman-Client
+Requires: perl-Gearman
 Requires: gearmand
 
 %description
@@ -54,6 +54,6 @@ find %{buildroot} -name .packlist -exec %{__rm} {} \;
 
 %changelog
 
-* Sat Aug 18 2012 Jan Gehring <jan.gehring at, gmail.com> 0.31.99.0-1
+* Sat Aug 18 2012 Jan Gehring <jan.gehring at, gmail.com> 0.32.0-1
 - inital release
 

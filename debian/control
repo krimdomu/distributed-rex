@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Jan Gehring <jan.gehring@gmail.com>
 Build-Depends: debhelper (>= 7),
-                  rex (>=0.32.0)
+                  rex,
                   perl (>= 5.10.0),
                   libjson-xs-perl
 Standards-Version: 3.9.1
@@ -16,6 +16,6 @@ Depends: ${misc:Depends},
             rex (>= 0.32.0),
             libjson-xs-perl,
             libyaml-perl,
-            libgearman-client-perl.
+            libgearman-client-perl,
             gearman
 Description: Distributed Rex with Gearman
