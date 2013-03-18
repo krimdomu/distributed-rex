@@ -44,7 +44,7 @@ $|++;
 
 my %opts;
 
-getopts('QdcChgf:', \%opts);
+getopts('QdcChg:f:', \%opts);
 
 require Rex::Args;
 Rex::Args->import;
