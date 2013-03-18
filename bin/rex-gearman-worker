@@ -44,11 +44,7 @@ $|++;
 
 my %opts;
 
-if($#ARGV < 0) {
-   @ARGV = qw(-h);
-}
-
-getopts('QdcChg:', \%opts);
+getopts('QdcChgf:', \%opts);
 
 require Rex::Args;
 Rex::Args->import;
@@ -112,6 +108,7 @@ if(exists $opts{h}) {
    printf "  %-15s %s\n", "-C", "Turn cache off.";
    printf "  %-15s %s\n", "-h", "Output the help.";
    printf "  %-15s %s\n", "-g", "Define the name of the worker queue.";
+   printf "  %-15s %s\n", "-f", "Define the name of the rexfile to use, the default is 'Rexfile'.";
  
    CORE::exit 0;
 }
@@ -127,7 +124,11 @@ $worker->job_servers(@{ $conf->{job_servers} });
 
 Rex::Logger::debug("Using function name: " . $opts{g});
 
-$::rexfile = "Rexfile";
+if (! exists $opts{f}) {
+   $::rexfile = "Rexfile";
+} else {
+   $::rexfile = $opts{f};
+}
 
 eval {
    my $ok = do($::rexfile);
