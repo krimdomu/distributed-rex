@@ -50,7 +50,12 @@ sub run {
 
    $client->job_servers(@{ $conf->{job_servers} });
    my $taskset = $client->new_task_set;
-   my $func_name = basename(getcwd());
+   my $func_name;
+   if(Rex::Args->is_opt("g")) {
+      $func_name = Rex::Args->is_opt("g");
+   } else {
+      $func_name = basename(getcwd());
+   }
    Rex::Logger::debug("Using func_name: $func_name");
 
    for my $server (@all_server) {
