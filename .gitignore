@@ -13,3 +13,5 @@ debian/*.log
 *.old
 *.bak
 README
+MYMETA.yml
+MYMETA.json
