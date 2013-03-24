@@ -4,7 +4,8 @@ my %deps = (
                   'Gearman::Worker' => '0',
                   'Gearman::Client' => '0',
                   'JSON::XS' => 0,
-                  'Rex' => '0.32',
+                  'Rex' => '0.41',
+                  'Capture::Tiny' => '0',
 );
 
 WriteMakefile1(

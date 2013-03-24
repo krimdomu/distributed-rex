@@ -12,6 +12,7 @@ use warnings;
 use Cwd qw(getcwd);
 use File::Basename;
 use Gearman::Client;
+use Data::Dumper;
 
 use Rex::TaskList::Base;
 use Rex::Logger;
@@ -74,6 +75,8 @@ sub run {
          $func_name => encode_json($options), {
             on_complete => sub {
                Rex::Logger::info("Successfully executed task on $server");
+               my $result = ${ $_[0] };
+               print $result;
             }, #  nothing yet
             on_fail => sub {
                Rex::Logger::info("Error executing task on $server");

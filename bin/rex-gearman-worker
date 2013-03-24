@@ -22,6 +22,7 @@ use Rex::Logger;
 use Rex::Output;
 
 use JSON::XS;
+use Capture::Tiny ':all';
 
 my $no_color = 0;
 eval "use Term::ANSIColor";
@@ -179,11 +180,14 @@ $worker->register_function($opts{g} => sub {
    # worker function
    my $task = Rex::TaskList->create()->get_task($options->{task});
 
-   $task->run($options->{server},
-      in_transaction => $options->{in_transaction},
-      params => $options->{options}->{params}
-   );
+   my $out = capture_merged {
+      $task->run($options->{server},
+         in_transaction => $options->{in_transaction},
+         params => $options->{options}->{params}
+      );
+   };
 
+   return $out;
 });
 $worker->work while 1;
 
