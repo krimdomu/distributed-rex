@@ -29,6 +29,14 @@ if(! -f "client.conf") {
 
 require Rex::CLI;
 my $rex = Rex::CLI->new;
-$rex->__run__;
+
+$rex->add_help(sub {
+   print "Additional rex-gearman-client parameter\n";
+   printf "  %-15s %s\n", "-g", "Set gearman queue name";
+});
+
+$rex->__run__(
+   g => { type => "string" },
+);
 
 

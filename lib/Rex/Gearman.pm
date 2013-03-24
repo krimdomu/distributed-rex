@@ -9,7 +9,7 @@ package Rex::Gearman;
 use strict;
 use warnings;
 
-our $VERSION = "0.32.0";
+our $VERSION = "0.40.99.1";
 
 1;
 

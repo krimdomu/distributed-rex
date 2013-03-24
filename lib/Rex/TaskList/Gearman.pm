@@ -69,7 +69,7 @@ sub run {
          default_auth => $self->is_default_auth,
       };
 
-      Rex::Logger::info("Adding new task to execute $task_name on $server->to_s");
+      Rex::Logger::info("Adding new task to execute $task_name on $server");
       $taskset->add_task(
          $func_name => encode_json($options), {
             on_complete => sub {
@@ -88,6 +88,11 @@ sub run {
 
    $taskset->wait;
 
+}
+
+sub get_exit_codes {
+   my ($self) = @_;
+   return (0);
 }
 
 1;
